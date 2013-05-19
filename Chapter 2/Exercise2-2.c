@@ -1,4 +1,4 @@
-//Write a loop equivalent tot he for loop above without using && or ||
+//Write a loop equivalent to the for loop above without using && or ||
 
 #include <stdio.h> 
 #define LIM 1000 //Change to whatever (as long as within range of int size)
