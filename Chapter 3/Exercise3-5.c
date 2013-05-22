@@ -7,8 +7,6 @@ int length(char s[]);
 int main()
 {
 	int x = 985; //test value
-	char s[] = ""; 
-	char t[] = ""; 
 	char u[] = ""; 
 	
 	printf("Test Value as Integer: %d\n", x);  
