@@ -1,3 +1,7 @@
+//Write a function itob(n, s, b) that converts the integer into a base b 
+//character representation in the string s. In particular itob(n, s, 16) 
+//formats a hexadecimal integer in s 
+
 #include <stdio.h> 
 
 void itob(int n, char s[], int b); 
@@ -7,11 +11,12 @@ int length(char s[]);
 int main()
 {
 	int x = 985; //test value
-	char u[] = ""; 
+	int b = 16; //hexadecimal base 
+	char s[] = ""; 
 	
 	printf("Test Value as Integer: %d\n", x);  
-	itob(x, u, 16); 
-	printf("Test Value as Character String Base 16: %s\n", u); //should output 3D9
+	itob(x, s, b); 
+	printf("Test Value as Character String Base 16: %s\n", s); //should output 3D9
 	
 	return 0;  
 }
