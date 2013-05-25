@@ -1,6 +1,6 @@
-//Write a function itob(n, s, b) that converts the integer into a base b 
-//character representation in the string s. In particular itob(n, s, 16) 
-//formats a hexadecimal integer in s 
+/* Write a function itob(n, s, b) that converts the integer into a base b 
+character representation in the string s. In particular itob(n, s, 16) 
+formats a hexadecimal integer in s */
 
 #include <stdio.h> 
 

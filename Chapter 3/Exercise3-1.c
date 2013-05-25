@@ -1,7 +1,7 @@
-//Write a binary seach function with only one test inside the loop and 
-//measure the difference in run-time 
+/* Write a binary seach function with only one test inside the loop and 
+measure the difference in run-time */
 
-//The binary search from the textbook proves to be faster 
+/* *The binary search from the textbook proves to be faster* */
 #include <stdio.h> 
 
 int binSearch2(int x, int v[], int n); 
@@ -23,7 +23,7 @@ int main()
 	return 0; 
 }
 
-//binary seach function which only makes only one test within the loop
+/* binary seach function which only makes only one test within the loop */
 int binSearch2(int x, int v[], int n)
 {
 	int low = 0, high = n-1, mid; 
@@ -43,7 +43,7 @@ int binSearch2(int x, int v[], int n)
 		return -1; //not in array
 }
 
-//binary search function from textbook
+/* binary search function from textbook */
 int binSearch1(int x, int v[], int n)
 {
 	int low = 0, high = n-1, mid; 
