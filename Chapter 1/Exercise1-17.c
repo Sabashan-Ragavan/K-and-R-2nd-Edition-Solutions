@@ -1,4 +1,4 @@
-//Write a program to print all input lines longer than 80 characters
+/* Write a program to print all input lines longer than 80 characters */
 
 #include <stdio.h> 
 #define MAXLINE 1000 
