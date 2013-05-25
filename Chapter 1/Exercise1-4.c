@@ -1,4 +1,4 @@
-//Write a program to print the coreesponding Celsius to Fahrenheit table
+/* Write a program to print the coreesponding Celsius to Fahrenheit table */ 
 
 #include <stdio.h> 
 
