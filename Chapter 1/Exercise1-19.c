@@ -1,4 +1,4 @@
-/*Write a function reverse that reverses the charac ter string s. 
+/* Write a function reverse that reverses the charac ter string s. 
 Use it to write a program that reverses its input a line at a time. */
 
 #include <stdio.h> 
