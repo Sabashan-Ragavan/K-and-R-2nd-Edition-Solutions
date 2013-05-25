@@ -3,7 +3,7 @@
 #include <stdio.h> 
 #define MAXLINE 1000 
 #define CUTOFF 80 /*Modify this value to whatever you want the 
-				  cutoff for the amount of characters needed for it to be printed*/
+		cutoff for the amount of characters needed for it to be printed*/
  
 int getline1(char s[]); 
  
