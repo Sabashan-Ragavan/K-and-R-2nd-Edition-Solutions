@@ -21,7 +21,7 @@ int main()
 		if ((index = strrindex(line, pattern)) >= 0) 
 		{
 			printf("Line: %sIndex: %d\n", line, index); /*outputs the line with the pattern
-														 and then the right most index */
+								      and then the right most index */
 			found++;
 		}
 	}
