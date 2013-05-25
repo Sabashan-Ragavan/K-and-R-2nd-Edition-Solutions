@@ -13,10 +13,10 @@ int main()
 	printf("Results from binSearch2...\n"); 
 	printf("%d\n", binSearch2(8, array, 6)); //should return 4
 	printf("%d\n", binSearch2(4, array, 6)); //should return 2
-	printf("%d\n\n", binSearch2(5, array, 6));	//should return -1 
-	
-	printf("Results from binSearch1...\n");
+	printf("%d\n\n", binSearch2(5, array, 6)); //should return -1 
+
 	//Should return same values as above...
+	printf("Results from binSearch1...\n");
 	printf("%d\n", binSearch1(8, array, 6)); 
 	printf("%d\n", binSearch1(4, array, 6)); 
 	printf("%d\n", binSearch1(5, array, 6));	
