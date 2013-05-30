@@ -1,3 +1,7 @@
+/* Given the basic framework, it's straightforward to extend
+the calculator. Add the modulous (%) operator and provisions 
+for negative numbers */ 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -49,9 +53,12 @@ int main()
                 else
                     printf("error: zero divisor\n");
                 break;
-			case '%':
+			case '%': //added case
 				op2 = pop(); 
-				push(fmod(pop(), op2));  
+				if(op2 != 0.0)
+					push(fmod(pop(), op2));  
+				else
+					printf("error: zero divisor\n"); 
 				break; 
             case '\n':
                 printf("\t%.9g\n", pop());
@@ -84,9 +91,11 @@ double pop(void)
     }
 }
 
+/* added provisions for negative number -- admittedly had to
+use the internet for help */ 
 int getop(char s[])
 {
-    int i, c;
+    int i, c, next;
    
     while((s[0] = c = getch()) == ' ' || c == '\t')
         ;
@@ -95,10 +104,22 @@ int getop(char s[])
 		return c; 
 	i = 0; 
 	if(c == '-')
-		s[++i] = c = getch(); 
-    if(isdigit(c))
-        while(isdigit(s[++i] = c = getch()))
-            ;
+	{
+		next = getch(); 
+		
+		if(!isdigit(next) && next != '.')
+			return c; 
+			
+		c = next;  		
+	}
+	else
+	{
+		c = getch(); 
+	}
+		
+	while(isdigit(s[++i] = c))
+		c = getch(); 
+		
     if(c == '.')
         while(isdigit(s[++i] = c = getch()))
             ;
