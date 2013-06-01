@@ -59,42 +59,42 @@ int main()
                 else
                     printf("error: zero divisor\n");
                 break;
-			case '%': 
-				op2 = pop();
-				if(op2 != 0.0)
-					push(fmod(pop(), op2));  
-				else
-					printf("error: zero divisor\n"); 
-				break; 
+            case '%': 
+		op2 = pop();
+		if(op2 != 0.0)
+		    push(fmod(pop(), op2));  
+		else
+	       	    printf("error: zero divisor\n"); 
+		break; 
             case '\n':
-				if(sp > 0) 
-					printf("\t%.9g\n", val[sp-1]);
+		if(sp > 0) 
+		    printf("\t%.9g\n", val[sp-1]);
                 else
-					printf(""); 
-				break;
-			case 'p' : case 'P': //character to print top element
-				print(); 
-				break;
-			case 'd' : case 'D': //character to duplicate top element
-				duplicate(); 
-				break ;
-			case 's': case 'S': //character to swap top two elements
-				swap(); 
-				break; 
-			case 'c': case 'C': //character to clear stack 
-				clear(); 
-				break; 
-			case '!':  //character to take sin of top element in stack
-				push(sin(pop())); 
-				break; 
-			case '@': //character to take exp of top element in stack
-				push(exp(pop()));
-				break; 
-			case '#': //character to take the second last element to 
+		    printf(""); 
+		break;
+	    case 'p' : case 'P': //character to print top element
+		print(); 
+		break;
+	    case 'd' : case 'D': //character to duplicate top element
+		duplicate(); 
+		break ;
+	    case 's': case 'S': //character to swap top two elements
+		swap(); 
+		break; 
+	    case 'c': case 'C': //character to clear stack 
+		clear(); 
+		break; 
+	    case '!':  //character to take sin of top element in stack
+		push(sin(pop())); 
+		break; 
+            case '@': //character to take exp of top element in stack
+		push(exp(pop()));
+		break; 
+	    case '#': //character to take the second last element to 
 					  //the power of the last element in the stack
-				op2 = pop(); 
-				push(pow(pop(), op2)); 
-				break; 
+		op2 = pop(); 
+		push(pow(pop(), op2)); 
+		break; 
             default:
                 printf("error: unknown command %s\n", s);
                 break;
