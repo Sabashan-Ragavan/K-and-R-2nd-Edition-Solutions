@@ -72,28 +72,17 @@ int main()
                 else
 		    printf(""); 
 		break;
-	    case 'p' : case 'P': //character to print top element
-		print(); 
+	case 'p' : case 'P': //character to print top element
+		print();
 		break;
-	    case 'd' : case 'D': //character to duplicate top element
-		duplicate(); 
+	case 'd' : case 'D': //character to duplicate top element
+		duplicate();
 		break ;
-	    case 's': case 'S': //character to swap top two elements
-		swap(); 
-		break; 
-	    case 'c': case 'C': //character to clear stack 
-		clear(); 
-		break; 
-	    case '!':  //character to take sin of top element in stack
-		push(sin(pop())); 
-		break; 
-            case '@': //character to take exp of top element in stack
-		push(exp(pop()));
-		break; 
-	    case '#': //character to take the second last element to 
-					  //the power of the last element in the stack
-		op2 = pop(); 
-		push(pow(pop(), op2)); 
+	case 's': case 'S': //character to swap top two elements
+		swap();
+		break;
+	case 'c': case 'C': //character to clear stack
+		clear();
 		break; 
             default:
                 printf("error: unknown command %s\n", s);
