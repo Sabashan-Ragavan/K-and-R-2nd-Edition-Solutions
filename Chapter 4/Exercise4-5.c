@@ -72,16 +72,16 @@ int main()
                 else
 		    printf(""); 
 		break;
-	case 'p' : case 'P': //character to print top element
+	    case 'p' : case 'P': //character to print top element
 		print();
 		break;
-	case 'd' : case 'D': //character to duplicate top element
+	    case 'd' : case 'D': //character to duplicate top element
 		duplicate();
 		break ;
-	case 's': case 'S': //character to swap top two elements
+	    case 's': case 'S': //character to swap top two elements
 		swap();
 		break;
-	case 'c': case 'C': //character to clear stack
+	    case 'c': case 'C': //character to clear stack
 		clear();
 		break; 
             default:
