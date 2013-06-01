@@ -1,9 +1,6 @@
 /* Add access to library functions like sin, exp and pow. 
 See <math.h> in Appendix B, Section 4. */ 
 
-/*Should update the program so that it can take sin, exp and pow
-as input...instead of there being random symbols representing them */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -11,6 +8,7 @@ as input...instead of there being random symbols representing them */
 
 #define MAXOP 100
 #define NUMBER '0'
+#define WORD 'A' 
 #define MAXVAL 100
 #define BUFSIZE 100 
 
@@ -28,6 +26,7 @@ void print(void);
 void duplicate(void); 
 void swap(void); 
 void clear(void); 
+void performMathFunction(char []); 
 
 int main()
 {
@@ -42,6 +41,9 @@ int main()
             case NUMBER:
                 push(atof(s));
                 break;
+			case WORD: //reads that a word was inputed
+				performMathFunction(s); //then if that word is a math function, performs it
+				break; 
             case '+':
                 push(pop() + pop());
                 break;
@@ -59,31 +61,31 @@ int main()
                 else
                     printf("error: zero divisor\n");
                 break;
-            case '%': 
-		op2 = pop();
-		if(op2 != 0.0)
-		    push(fmod(pop(), op2));  
-		else
-	       	    printf("error: zero divisor\n"); 
-		break; 
+			case '%': 
+				op2 = pop();
+				if(op2 != 0.0)
+					push(fmod(pop(), op2));  
+				else
+					printf("error: zero divisor\n"); 
+				break; 
             case '\n':
-		if(sp > 0) 
-		    printf("\t%.9g\n", val[sp-1]);
+				if(sp > 0) 
+					printf("\t%.9g\n", val[sp-1]);
                 else
-		    printf(""); 
-		break;
-	    case 'p' : case 'P': //character to print top element
-		print();
-		break;
-	    case 'd' : case 'D': //character to duplicate top element
-		duplicate();
-		break ;
-	    case 's': case 'S': //character to swap top two elements
-		swap();
-		break;
-	    case 'c': case 'C': //character to clear stack
-		clear();
-		break; 
+					printf(""); 
+				break;
+			case '!' : //character to print top element (altered from last exercise)
+				print(); 
+				break;
+			case '@' : //character to duplicate top element (altered from last exercise)
+				duplicate(); 
+				break ;
+			case '#' : //character to swap top two elements (altered from last exercise)
+				swap(); 
+				break; 
+			case '$' : //character to clear stack (altered from last exercise)
+				clear(); 
+				break; 
             default:
                 printf("error: unknown command %s\n", s);
                 break;
@@ -113,8 +115,6 @@ double pop(void)
     }
 }
 
-/* added provisions for negative number -- admittedly had to
-use the internet for help */ 
 int getop(char s[])
 {
     int i, c, next;
@@ -122,9 +122,20 @@ int getop(char s[])
     while((s[0] = c = getch()) == ' ' || c == '\t')
         ;
     s[1] = '\0';
+	
+	i = 0; 
+	if(isalpha(c))
+	{
+		while(isalpha(s[++i] = c = getch()));  
+		s[i] = '\0'; 
+		if(c != EOF)
+			ungetch(c); 
+		return WORD; 
+	}
+	
 	if(!isdigit(c) && c != '.' && c != '-')
 		return c; 
-	i = 0; 
+	
 	if(c == '-')
 	{
 		next = getch(); 
@@ -212,4 +223,24 @@ void clear(void)
 		val[i] = 0; 
 	sp = 0; 
 	printf("Finished Clearing: \n");
+}
+
+/* function which performs the appropriate math function */ 
+void performMathFunction(char s[])
+{
+	//printf("%s\n", s) ; 
+	double op2; 
+	if(strcmp("sin", s) == 0)
+		push(sin(pop())); 
+	else if(strcmp("cos", s) == 0)
+		push(cos(pop())); 
+	else if(strcmp("exp", s) == 0)
+		push(exp(pop())); 
+	else if(strcmp("pow", s) == 0)
+	{
+		op2 = pop() ; 
+		push(pow(pop(), op2)); 
+	}
+	else
+		printf("%s is an undefined function", s); 
 }
