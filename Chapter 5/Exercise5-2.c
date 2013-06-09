@@ -23,8 +23,6 @@ int main()
 		printf("%f\n", number);
 	}
 
-return 0;
-	
 	return 0; 
 }
 
