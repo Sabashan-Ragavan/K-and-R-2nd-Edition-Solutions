@@ -24,8 +24,6 @@ int main()
 		printf("%d\n", number);
 	}
 
-return 0;
-	
 	return 0; 
 }
 
