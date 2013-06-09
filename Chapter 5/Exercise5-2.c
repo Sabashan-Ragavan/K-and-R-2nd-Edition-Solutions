@@ -2,8 +2,6 @@
 a valid representation of zero. Fix it to push such a character back
 on the input */ 
 
-/* admittedly looked up part of the solution as the question
-was unclear to me */ 
 
 #include <stdio.h> 
 #include <ctype.h> 
